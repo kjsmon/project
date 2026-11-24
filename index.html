@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2027 봄 워크숍 '함께 걷는 하루' | 온담컴퍼니</title>
+    <meta name="description" content="온담컴퍼니 경영지원팀이 주최하는 2027 봄 워크숍 '함께 걷는 하루' 사내 행사 안내 페이지입니다." />
+    <meta property="og:title" content="2027 봄 워크숍 '함께 걷는 하루' | 온담컴퍼니" />
+    <meta property="og:description" content="온담컴퍼니 경영지원팀이 주최하는 2027 봄 워크숍 '함께 걷는 하루' 사내 행사 안내 페이지입니다." />
+    <meta property="og:type" content="website" />
+    <style>
+      :root {
+        --bg: #eaf6ee;
+        --surface: #ffffff;
+        --surface-soft: #f5fbf7;
+        --title: #0f4c3f;
+        --body: #14261f;
+        --muted: #355447;
+        --accent: #ff8fb0;
+        --accent-soft: #ffe3ec;
+        --btn: #ffcf33;
+        --btn-hover: #f5c118;
+        --border: #cbe4d4;
+        --border-strong: #a9d2b9;
+        --shadow: 0 12px 32px rgba(15, 76, 63, 0.06);
+        --font-display: ui-rounded, 'SF Pro Rounded', 'Apple SD Gothic Neo', 'NanumSquareRound', 'Hiragino Maru Gothic ProN', '맑은 고딕', 'Malgun Gothic', system-ui, -apple-system, sans-serif;
+        --font-body: 'Apple SD Gothic Neo', '맑은 고딕', 'Malgun Gothic', system-ui, -apple-system, sans-serif;
+        --container: 1080px;
+      }
+      *, *::before, *::after { box-sizing: border-box; }
+      html {
+        scroll-behavior: smooth;
+        background-color: var(--bg);
+        color: var(--body);
+        font-family: var(--font-body);
+        font-size: 16px;
+        line-height: 1.7;
+        word-break: keep-all;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+      body { margin: 0; background-color: var(--bg); color: var(--body); min-height: 100vh; }
+      h1, h2, h3, p, dl, dt, dd { margin: 0; }
+      a { color: inherit; text-decoration: none; }
+      button { font-family: inherit; font-size: inherit; }
+
+      .sr-only {
+        position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+        overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+      }
+      .skip-link:focus {
+        position: fixed; top: 12px; left: 12px; z-index: 100; width: auto; height: auto;
+        margin: 0; padding: 10px 18px; overflow: visible; clip: auto;
+        background: var(--title); color: #ffffff; border-radius: 12px; font-weight: 700;
+      }
+      .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+      @media (min-width: 640px) { .container { padding: 0 32px; } }
+      .tabular-nums { font-variant-numeric: tabular-nums; }
+      .icon { width: 18px; height: 18px; flex-shrink: 0; }
+
+      /* 상단 고정 메뉴 */
+      .site-header {
+        position: sticky; top: 0; z-index: 50;
+        background-color: rgba(234, 246, 238, 0.94);
+        backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+      }
+      .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+      @media (min-width: 768px) { .header-inner { gap: 32px; min-height: 74px; } }
+      .brand {
+        font-family: var(--font-display); font-size: 1.25rem; font-weight: 800;
+        letter-spacing: -0.02em; color: var(--title); white-space: nowrap; flex-shrink: 0; padding: 6px 0;
+      }
+      .brand:focus-visible, .nav-link:focus-visible, .btn-primary:focus-visible, .btn-text:focus-visible, .btn-top:focus-visible {
+        outline: 3px solid var(--title); outline-offset: 3px;
+      }
+      .top-nav { display: flex; align-items: center; gap: 12px; overflow-x: auto; scrollbar-width: none; }
+      .top-nav::-webkit-scrollbar { display: none; }
+      @media (min-width: 640px) { .top-nav { gap: 22px; } }
+      .nav-link {
+        position: relative; display: inline-flex; align-items: center; min-height: 44px;
+        font-size: 1rem; font-weight: 600; color: var(--muted); white-space: nowrap; flex-shrink: 0;
+        transition: color 160ms ease;
+      }
+      .nav-link:hover { color: var(--title); }
+      .nav-link::after {
+        content: ''; position: absolute; left: 0; right: 0; bottom: 6px; height: 4px;
+        border-radius: 999px; background-color: var(--accent); opacity: 0; transform: scaleX(0.6);
+        transition: opacity 160ms ease, transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .nav-link.is-active { color: var(--title); font-weight: 800; }
+      .nav-link.is-active::after { opacity: 1; transform: scaleX(1); }
+      .header-cta-wrap { display: none; flex-shrink: 0; }
+      @media (min-width: 900px) { .header-cta-wrap { display: flex; align-items: center; } }
+
+      /* 버튼 공통 */
+      .btn-primary {
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        min-height: 46px; padding: 11px 22px; border: 2px solid transparent; border-radius: 16px;
+        background-color: var(--btn); color: var(--body); font-size: 1rem; font-weight: 700;
+        line-height: 1.2; white-space: nowrap; flex-shrink: 0; cursor: pointer;
+        box-shadow: 0 4px 14px rgba(15, 76, 63, 0.08);
+        transition: background-color 160ms ease, transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .btn-primary:hover { background-color: var(--btn-hover); transform: translateY(-1px); }
+      .btn-primary:active { transform: translateY(0); }
+      .btn-header { min-height: 42px; padding: 9px 18px; border-radius: 14px; font-size: 1rem; }
+      .btn-text {
+        display: inline-flex; align-items: center; min-height: 46px; padding: 10px 8px;
+        border: 0; border-radius: 10px; background: transparent; color: var(--title);
+        font-size: 1rem; font-weight: 700; white-space: nowrap; flex-shrink: 0; cursor: pointer;
+        text-decoration: underline; text-decoration-color: var(--accent);
+        text-decoration-thickness: 3px; text-underline-offset: 6px;
+        transition: color 160ms ease, opacity 160ms ease;
+      }
+      .btn-text:hover { opacity: 0.8; }
+
+      /* 섹션 공통 */
+      section { scroll-margin-top: 76px; }
+      .section-spaced { padding: 84px 0; }
+      @media (min-width: 768px) { .section-spaced { padding: 120px 0; } }
+      .section-title {
+        font-family: var(--font-display); font-size: clamp(1.85rem, 3.2vw, 2.45rem);
+        font-weight: 800; line-height: 1.25; letter-spacing: -0.025em;
+        color: var(--title); text-wrap: balance;
+      }
+      .title-accent {
+        display: block; width: 52px; height: 5px; margin-top: 14px;
+        border-radius: 999px; background-color: var(--accent);
+      }
+      .section-subtitle { margin-top: 14px; font-size: 1rem; font-weight: 500; color: var(--muted); line-height: 1.65; }
+      .card-surface {
+        background-color: var(--surface); border: 1px solid var(--border);
+        border-radius: 28px; padding: 36px 24px; box-shadow: var(--shadow);
+      }
+      @media (min-width: 768px) { .card-surface { padding: 52px; } }
+      .split-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+      @media (min-width: 820px) {
+        .split-grid { grid-template-columns: 4fr 8fr; gap: 48px; align-items: start; }
+        .split-grid-center { align-items: center; }
+      }
+
+      /* 1. 첫 화면 */
+      .hero-section { padding: 56px 0 76px; }
+      @media (min-width: 768px) { .hero-section { padding: 84px 0 104px; } }
+      .hero-top { max-width: 760px; }
+      .hero-meta { font-size: 1rem; font-weight: 600; color: var(--muted); }
+      .hero-meta-dot { margin: 0 8px; color: var(--accent); font-weight: 800; }
+      .hero-heading {
+        margin-top: 20px; font-family: var(--font-display);
+        font-size: clamp(2.4rem, 5.4vw, 3.85rem); font-weight: 800; line-height: 1.18;
+        letter-spacing: -0.03em; color: var(--title); text-wrap: balance;
+      }
+      .hero-heading-sub { display: block; margin-top: 8px; }
+      .hero-heading-highlight { position: relative; display: inline-block; z-index: 1; }
+      .hero-heading-highlight::after {
+        content: ''; position: absolute; left: -4px; right: -4px; bottom: 4px;
+        height: 12px; border-radius: 999px; background-color: var(--accent-soft); z-index: -1;
+      }
+      .hero-intro { margin-top: 24px; font-size: clamp(1.125rem, 2.2vw, 1.35rem); font-weight: 500; line-height: 1.7; color: var(--body); }
+      .hero-quick-facts {
+        margin-top: 32px; display: grid; grid-template-columns: 1fr; gap: 16px;
+        padding: 22px 26px; background-color: var(--surface); border: 1px solid var(--border);
+        border-radius: 22px; box-shadow: var(--shadow);
+      }
+      @media (min-width: 560px) { .hero-quick-facts { grid-template-columns: 1fr 1fr; gap: 28px; } }
+      .fact-item { display: flex; flex-direction: column; gap: 4px; }
+      @media (min-width: 560px) { .fact-item + .fact-item { padding-left: 28px; border-left: 1px solid var(--border); } }
+      .fact-label { font-size: 1rem; font-weight: 700; color: var(--title); }
+      .fact-value { font-size: 1.15rem; font-weight: 700; color: var(--body); }
+      .hero-actions { margin-top: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
+      .hero-scene-wrap {
+        margin-top: 48px; background-color: var(--surface); border: 1px solid var(--border);
+        border-radius: 28px; padding: 16px; box-shadow: var(--shadow);
+      }
+      @media (min-width: 768px) { .hero-scene-wrap { margin-top: 60px; padding: 20px; } }
+      .hero-scene-svg { display: block; width: 100%; height: auto; border-radius: 18px; }
+
+      /* 2. 행사 소개 */
+      .about-prose { max-width: 64ch; display: flex; flex-direction: column; gap: 20px; font-size: 1.125rem; line-height: 1.85; color: var(--body); }
+
+      /* 3. 핵심 정보 */
+      .details-header { display: flex; flex-direction: column; justify-content: space-between; gap: 20px; }
+      @media (min-width: 640px) { .details-header { flex-direction: row; align-items: flex-end; } }
+      .details-three-cols { margin-top: 36px; display: grid; grid-template-columns: 1fr; gap: 20px; }
+      @media (min-width: 768px) { .details-three-cols { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
+      .detail-box {
+        background-color: var(--surface); border: 1px solid var(--border); border-radius: 24px;
+        padding: 28px 26px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 12px;
+      }
+      .detail-label { font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; color: var(--title); }
+      .detail-value { font-size: 1.2rem; font-weight: 700; line-height: 1.5; color: var(--body); }
+      .organizer-bar {
+        margin-top: 20px; background-color: var(--surface-soft); border: 1px solid var(--border);
+        border-radius: 20px; padding: 20px 26px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 24px;
+      }
+      .organizer-label { font-family: var(--font-display); font-size: 1rem; font-weight: 800; color: var(--title); }
+      .organizer-value { font-size: 1.0625rem; font-weight: 600; color: var(--body); }
+
+      /* 4. 하루 일정 */
+      .schedule-table-wrap { overflow: hidden; border: 1px solid var(--border); border-radius: 20px; background-color: var(--surface); }
+      .schedule-table { width: 100%; border-collapse: collapse; text-align: left; }
+      .schedule-table thead { background-color: var(--surface-soft); }
+      .schedule-table th {
+        padding: 16px 20px; font-family: var(--font-display); font-size: 1rem; font-weight: 800;
+        color: var(--title); border-bottom: 1px solid var(--border);
+      }
+      .schedule-table td {
+        padding: 18px 20px; font-size: 1.0625rem; line-height: 1.55; color: var(--body);
+        border-bottom: 1px solid var(--border); vertical-align: top;
+      }
+      .schedule-table tbody tr:last-child td { border-bottom: 0; }
+      .schedule-time { width: 112px; font-weight: 800; color: var(--title); white-space: nowrap; }
+      .schedule-content { font-weight: 600; }
+      @media (min-width: 640px) {
+        .schedule-table th, .schedule-table td { padding-left: 26px; padding-right: 26px; }
+        .schedule-time { width: 148px; }
+      }
+
+      /* 5. 오시는 곳 & 6. 문의 */
+      .info-panel {
+        background-color: var(--surface-soft); border: 1px solid var(--border);
+        border-radius: 20px; padding: 26px;
+      }
+      @media (min-width: 560px) { .info-panel { padding: 30px 32px; } }
+      .venue-place-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 24px; }
+      .venue-rain-row {
+        margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--border);
+        display: flex; flex-direction: column; gap: 8px;
+      }
+      .contact-list { display: grid; grid-template-columns: 1fr; gap: 20px; }
+      @media (min-width: 560px) { .contact-list { grid-template-columns: 1fr 1fr; gap: 32px; } }
+      .contact-item { display: flex; flex-direction: column; gap: 8px; }
+      .contact-label { font-family: var(--font-display); font-size: 1rem; font-weight: 800; color: var(--title); }
+      .contact-value { font-size: 1.2rem; font-weight: 700; color: var(--body); }
+      .contact-value-undecided { color: var(--muted); }
+
+      /* 푸터 */
+      .site-footer { margin-top: 24px; border-top: 1px solid var(--border); padding: 48px 0 56px; }
+      .footer-top { display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 18px; }
+      @media (min-width: 640px) { .footer-top { flex-direction: row; align-items: center; } }
+      .footer-info { font-size: 1rem; color: var(--muted); }
+      .footer-info strong { color: var(--title); font-weight: 700; }
+      .btn-top {
+        display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 10px 18px;
+        border: 1px solid var(--border-strong); border-radius: 14px; background-color: var(--surface);
+        color: var(--title); font-size: 1rem; font-weight: 700; white-space: nowrap; flex-shrink: 0;
+        cursor: pointer; transition: background-color 160ms ease, border-color 160ms ease;
+      }
+      .btn-top:hover { background-color: var(--btn); border-color: var(--btn); color: var(--body); }
+      .footer-disclaimer {
+        margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--border);
+        font-size: 1rem; font-weight: 600; color: var(--title);
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#hero" class="sr-only skip-link">본문 바로가기</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#hero" class="brand" data-nav-target="hero">온담컴퍼니</a>
+
+        <nav class="top-nav" aria-label="페이지 영역 이동">
+          <a href="#hero" class="nav-link is-active" data-nav="hero" aria-current="location">첫 화면</a>
+          <a href="#about" class="nav-link" data-nav="about">행사 소개</a>
+          <a href="#details" class="nav-link" data-nav="details">핵심 정보</a>
+          <a href="#schedule" class="nav-link" data-nav="schedule">일정</a>
+          <a href="#venue" class="nav-link" data-nav="venue">장소</a>
+          <a href="#contact" class="nav-link" data-nav="contact">문의</a>
+        </nav>
+
+        <div class="header-cta-wrap">
+          <button type="button" class="btn-primary btn-header" data-nav-target="details">핵심 정보 보기</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- 1. 첫 화면 -->
+      <section id="hero" class="hero-section" aria-labelledby="hero-heading">
+        <div class="container">
+          <div class="hero-top">
+            <p class="hero-meta">
+              <span>온담컴퍼니 경영지원팀</span>
+              <span class="hero-meta-dot" aria-hidden="true">·</span>
+              <span>사내 행사 안내</span>
+            </p>
+
+            <h1 id="hero-heading" class="hero-heading">
+              <span>2027 봄 워크숍</span>
+              <span class="hero-heading-sub">
+                <span class="hero-heading-highlight">'함께 걷는 하루'</span>
+              </span>
+            </h1>
+
+            <p class="hero-intro">봄날, 동료와 나란히 걷는 하루</p>
+
+            <dl class="hero-quick-facts">
+              <div class="fact-item">
+                <dt class="fact-label">날짜</dt>
+                <dd class="fact-value tabular-nums">2027년 4월 16일(금)</dd>
+              </div>
+              <div class="fact-item">
+                <dt class="fact-label">장소</dt>
+                <dd class="fact-value">광교호수공원</dd>
+              </div>
+            </dl>
+
+            <div class="hero-actions">
+              <button type="button" class="btn-primary" data-nav-target="details">
+                <span>핵심 정보 확인하기</span>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 5v14" />
+                  <path d="m19 12-7 7-7-7" />
+                </svg>
+              </button>
+              <button type="button" class="btn-text" data-nav-target="about">행사 소개 읽기</button>
+            </div>
+          </div>
+
+          <!-- 첫 화면 아래: 호수, 산책로, 나무 단순 도형 그래픽 -->
+          <div class="hero-scene-wrap">
+            <svg class="hero-scene-svg" viewBox="0 0 1000 280" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="봄날의 호수와 산책로, 나무를 단순한 도형으로 표현한 그림">
+              <rect width="1000" height="280" rx="18" fill="#F4FBF6" />
+              <circle cx="860" cy="68" r="42" fill="#FFF3C4" />
+              <circle cx="860" cy="68" r="24" fill="#FFCF33" />
+              <g fill="#FFFFFF">
+                <rect x="120" y="44" width="96" height="26" rx="13" />
+                <circle cx="152" cy="46" r="18" />
+                <circle cx="182" cy="42" r="22" />
+                <rect x="520" y="58" width="84" height="22" rx="11" />
+                <circle cx="552" cy="58" r="16" />
+                <circle cx="578" cy="56" r="14" />
+              </g>
+              <path d="M0 176C140 124 280 128 420 162C560 196 710 132 860 144C925 149 968 160 1000 170V280H0V176Z" fill="#D7EFE0" />
+              <path d="M0 192C190 156 360 164 530 194C690 222 850 166 1000 184V280H0V192Z" fill="#C4E6D2" />
+              <path d="M0 196C150 184 310 186 470 202C590 214 670 232 720 280H0V196Z" fill="#AEE2DA" />
+              <path d="M0 220C140 210 290 214 430 228C525 238 590 254 636 280H0V220Z" fill="#9AD7CE" />
+              <line x1="78" y1="216" x2="152" y2="216" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.8" />
+              <line x1="212" y1="238" x2="312" y2="238" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.7" />
+              <line x1="118" y1="256" x2="184" y2="256" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+              <line x1="378" y1="224" x2="444" y2="224" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.75" />
+              <path d="M420 280C505 224 645 190 790 188C876 187 948 196 1000 208V280H420Z" fill="#8FD0B0" />
+              <path d="M498 280C562 246 648 222 746 218C838 214 918 224 1000 238V280H498Z" fill="#FFF8E2" />
+              <path d="M558 280C620 252 696 238 782 236C860 234 934 244 1000 256" stroke="#FFCF33" stroke-width="4" stroke-dasharray="10 12" stroke-linecap="round" />
+              <g>
+                <rect x="64" y="148" width="12" height="46" rx="6" fill="#0F4C3F" />
+                <circle cx="70" cy="126" r="30" fill="#0F4C3F" />
+                <circle cx="56" cy="134" r="20" fill="#1F6E5B" />
+              </g>
+              <g>
+                <rect x="122" y="156" width="10" height="36" rx="5" fill="#14261F" />
+                <circle cx="127" cy="136" r="24" fill="#FF8FB0" />
+                <circle cx="140" cy="144" r="16" fill="#FFA8C2" />
+              </g>
+              <g>
+                <rect x="314" y="152" width="10" height="38" rx="5" fill="#0F4C3F" />
+                <circle cx="319" cy="134" r="24" fill="#2A7D66" />
+              </g>
+              <g>
+                <rect x="652" y="150" width="14" height="58" rx="7" fill="#14261F" />
+                <circle cx="659" cy="120" r="36" fill="#FF8FB0" />
+                <circle cx="634" cy="132" r="24" fill="#FFA6C0" />
+                <circle cx="684" cy="132" r="22" fill="#FF8FB0" />
+              </g>
+              <g>
+                <rect x="756" y="138" width="16" height="68" rx="8" fill="#0F4C3F" />
+                <circle cx="764" cy="108" r="38" fill="#0F4C3F" />
+                <circle cx="792" cy="124" r="24" fill="#277962" />
+              </g>
+              <g>
+                <rect x="878" y="158" width="12" height="52" rx="6" fill="#0F4C3F" />
+                <circle cx="884" cy="134" r="28" fill="#2E866D" />
+              </g>
+              <g>
+                <rect x="938" y="164" width="10" height="46" rx="5" fill="#14261F" />
+                <circle cx="943" cy="146" r="22" fill="#FF8FB0" />
+              </g>
+              <circle cx="590" cy="116" r="5" fill="#FF8FB0" />
+              <circle cx="614" cy="154" r="4" fill="#FF8FB0" />
+              <circle cx="708" cy="98" r="4.5" fill="#FF8FB0" />
+              <circle cx="170" cy="118" r="4" fill="#FF8FB0" />
+              <circle cx="718" cy="176" r="4" fill="#FFCF33" />
+              <circle cx="826" cy="182" r="4" fill="#FFCF33" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. 행사 소개 -->
+      <section id="about" class="section-spaced" aria-labelledby="about-heading">
+        <div class="container">
+          <div class="card-surface">
+            <div class="split-grid">
+              <div>
+                <h2 id="about-heading" class="section-title">01. 행사 소개</h2>
+                <span class="title-accent" aria-hidden="true"></span>
+                <p class="section-subtitle">2027 봄 워크숍 '함께 걷는 하루'</p>
+              </div>
+              <div class="about-prose">
+                <p>2027 봄 워크숍 '함께 걷는 하루'는 온담컴퍼니 경영지원팀이 주최하여 온담컴퍼니 전 직원이 한자리에 모이는 사내 행사입니다.</p>
+                <p>2027년 4월 16일 금요일 광교호수공원에서 동료들과 나란히 걸으며 뜻깊은 하루를 함께합니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 핵심 정보 -->
+      <section id="details" class="section-spaced" aria-labelledby="details-heading">
+        <div class="container">
+          <div class="details-header">
+            <div>
+              <h2 id="details-heading" class="section-title">02. 핵심 정보</h2>
+              <span class="title-accent" aria-hidden="true"></span>
+              <p class="section-subtitle">일시, 장소, 대상 정보를 한눈에 확인하실 수 있습니다.</p>
+            </div>
+            <div>
+              <button type="button" id="copy-summary-btn" class="btn-primary" aria-live="polite">
+                <svg id="copy-icon" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+                </svg>
+                <svg id="check-icon" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: none">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <span id="copy-btn-label">핵심 정보 복사</span>
+              </button>
+            </div>
+          </div>
+
+          <dl class="details-three-cols">
+            <div class="detail-box">
+              <dt class="detail-label">일시</dt>
+              <dd class="detail-value tabular-nums">2027년 4월 16일(금) 09:30~16:00</dd>
+            </div>
+            <div class="detail-box">
+              <dt class="detail-label">장소</dt>
+              <dd class="detail-value">광교호수공원</dd>
+            </div>
+            <div class="detail-box">
+              <dt class="detail-label">대상</dt>
+              <dd class="detail-value">온담컴퍼니 전 직원</dd>
+            </div>
+          </dl>
+
+          <dl class="organizer-bar">
+            <dt class="organizer-label">주최</dt>
+            <dd class="organizer-value">온담컴퍼니 경영지원팀</dd>
+          </dl>
+        </div>
+      </section>
+
+      <!-- 4. 하루 일정 -->
+      <section id="schedule" class="section-spaced" aria-labelledby="schedule-heading">
+        <div class="container">
+          <div class="card-surface">
+            <div class="split-grid">
+              <div>
+                <h2 id="schedule-heading" class="section-title">03. 하루 일정</h2>
+                <span class="title-accent" aria-hidden="true"></span>
+              </div>
+              <div class="schedule-table-wrap">
+                <table class="schedule-table">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="schedule-time">시간</th>
+                      <th scope="col">내용</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="schedule-time tabular-nums">09:30</td><td class="schedule-content">집결, 출석 확인</td></tr>
+                    <tr><td class="schedule-time tabular-nums">10:00</td><td class="schedule-content">여는 말씀</td></tr>
+                    <tr><td class="schedule-time tabular-nums">10:30</td><td class="schedule-content">팀별 걷기 미션</td></tr>
+                    <tr><td class="schedule-time tabular-nums">12:00</td><td class="schedule-content">점심 (장소 미정)</td></tr>
+                    <tr><td class="schedule-time tabular-nums">13:30</td><td class="schedule-content">팀 대화 '올해 우리 팀'</td></tr>
+                    <tr><td class="schedule-time tabular-nums">15:00</td><td class="schedule-content">사진 촬영, 정리</td></tr>
+                    <tr><td class="schedule-time tabular-nums">16:00</td><td class="schedule-content">해산</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 오시는 곳 -->
+      <section id="venue" class="section-spaced" aria-labelledby="venue-heading">
+        <div class="container">
+          <div class="card-surface">
+            <div class="split-grid split-grid-center">
+              <div>
+                <h2 id="venue-heading" class="section-title">04. 오시는 곳</h2>
+                <span class="title-accent" aria-hidden="true"></span>
+              </div>
+              <div class="info-panel">
+                <div class="venue-place-row">
+                  <dl class="contact-item">
+                    <dt class="contact-label">장소</dt>
+                    <dd class="contact-value">창포원</dd>
+                  </dl>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=창포원"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-primary"
+                  >
+                    <span>지도에서 보기</span>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M15 3h6v6" />
+                      <path d="M10 14 21 3" />
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    </svg>
+                  </a>
+                </div>
+                <dl class="venue-rain-row">
+                  <dt class="contact-label">우천 시 안내</dt>
+                  <dd class="contact-value contact-value-undecided">미정</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. 문의 -->
+      <section id="contact" class="section-spaced" aria-labelledby="contact-heading">
+        <div class="container">
+          <div class="card-surface">
+            <div class="split-grid split-grid-center">
+              <div>
+                <h2 id="contact-heading" class="section-title">05. 문의</h2>
+                <span class="title-accent" aria-hidden="true"></span>
+                <p class="section-subtitle">행사 관련 문의 담당 부서입니다.</p>
+              </div>
+              <div class="info-panel">
+                <dl class="contact-list">
+                  <div class="contact-item">
+                    <dt class="contact-label">문의 부서</dt>
+                    <dd class="contact-value">경영지원팀</dd>
+                  </div>
+                  <div class="contact-item">
+                    <dt class="contact-label">연락처</dt>
+                    <dd class="contact-value contact-value-undecided">미정</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-info">
+            <strong>2027 봄 워크숍 '함께 걷는 하루'</strong>
+            <span class="hero-meta-dot" aria-hidden="true">·</span>
+            <span>온담컴퍼니 경영지원팀</span>
+          </div>
+          <button type="button" class="btn-top" data-nav-target="hero">
+            <span>맨 위로</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m18 15-6-6-6 6" />
+            </svg>
+          </button>
+        </div>
+        <p class="footer-disclaimer">교육용 가상 행사입니다</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var sectionIds = ['hero', 'about', 'details', 'schedule', 'venue', 'contact'];
+        var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-link[data-nav]'));
+        var navTriggers = Array.prototype.slice.call(document.querySelectorAll('[data-nav], [data-nav-target]'));
+        var prefersReducedMotion =
+          window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function setActiveNav(id) {
+          navLinks.forEach(function (link) {
+            var isMatch = link.getAttribute('data-nav') === id;
+            link.classList.toggle('is-active', isMatch);
+            if (isMatch) {
+              link.setAttribute('aria-current', 'location');
+            } else {
+              link.removeAttribute('aria-current');
+            }
+          });
+        }
+
+        function scrollToSection(id) {
+          var target = document.getElementById(id);
+          if (!target) return;
+          setActiveNav(id);
+          target.scrollIntoView({
+            behavior: prefersReducedMotion ? 'auto' : 'smooth',
+            block: 'start',
+          });
+        }
+
+        navTriggers.forEach(function (el) {
+          el.addEventListener('click', function (event) {
+            var targetId = el.getAttribute('data-nav') || el.getAttribute('data-nav-target');
+            if (!targetId) return;
+            event.preventDefault();
+            scrollToSection(targetId);
+          });
+        });
+
+        var sections = sectionIds
+          .map(function (id) { return document.getElementById(id); })
+          .filter(Boolean);
+
+        if ('IntersectionObserver' in window && sections.length > 0) {
+          var observer = new IntersectionObserver(
+            function (entries) {
+              var visible = entries
+                .filter(function (entry) { return entry.isIntersecting; })
+                .sort(function (a, b) {
+                  return Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top);
+                });
+              if (visible.length > 0) {
+                setActiveNav(visible[0].target.id);
+              }
+            },
+            { rootMargin: '-20% 0px -55% 0px', threshold: [0, 0.25, 0.5] }
+          );
+          sections.forEach(function (section) { observer.observe(section); });
+        }
+
+        window.addEventListener(
+          'scroll',
+          function () {
+            var scrollBottom = window.innerHeight + window.scrollY;
+            var docHeight = document.documentElement.scrollHeight;
+            if (docHeight - scrollBottom < 48) {
+              setActiveNav('contact');
+            } else if (window.scrollY < 40) {
+              setActiveNav('hero');
+            }
+          },
+          { passive: true }
+        );
+
+        var copyBtn = document.getElementById('copy-summary-btn');
+        var copyIcon = document.getElementById('copy-icon');
+        var checkIcon = document.getElementById('check-icon');
+        var copyLabel = document.getElementById('copy-btn-label');
+        var copyTimer = null;
+
+        var summaryText = [
+          "행사명: 2027 봄 워크숍 '함께 걷는 하루'",
+          '주최: 온담컴퍼니 경영지원팀',
+          '일시: 2027년 4월 16일(금) 09:30~16:00',
+          '장소: 광교호수공원',
+          '대상: 온담컴퍼니 전 직원',
+          '문의: 경영지원팀 (연락처 미정)',
+        ].join('\n');
+
+        function showCopiedState() {
+          if (copyIcon) copyIcon.style.display = 'none';
+          if (checkIcon) checkIcon.style.display = 'inline-block';
+          if (copyLabel) copyLabel.textContent = '행사 요약이 복사되었습니다';
+          if (copyTimer) window.clearTimeout(copyTimer);
+          copyTimer = window.setTimeout(function () {
+            if (copyIcon) copyIcon.style.display = 'inline-block';
+            if (checkIcon) checkIcon.style.display = 'none';
+            if (copyLabel) copyLabel.textContent = '핵심 정보 복사';
+          }, 2400);
+        }
+
+        function fallbackCopy(text) {
+          var textarea = document.createElement('textarea');
+          textarea.value = text;
+          textarea.setAttribute('readonly', '');
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.select();
+          try {
+            document.execCommand('copy');
+          } catch (e) {
+            // 복사 미지원 환경 대비
+          }
+          document.body.removeChild(textarea);
+          showCopiedState();
+        }
+
+        if (copyBtn) {
+          copyBtn.addEventListener('click', function () {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(summaryText).then(showCopiedState).catch(function () {
+                fallbackCopy(summaryText);
+              });
+            } else {
+              fallbackCopy(summaryText);
+            }
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
